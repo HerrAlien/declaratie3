@@ -226,7 +226,9 @@ table
             #locul_nasterii
             {
                 max-width:30mm;
+                width:30mm;
             }
+
             #locul_nasterii__label 
             {
                 display: inline;
