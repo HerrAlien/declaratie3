@@ -49,8 +49,9 @@ dataNasterii.onchange = function() {
     document.getElementById("vizualizare-data-nasterii-luna").value = birthDate.getMonth() + 1;
     document.getElementById("vizualizare-data-nasterii-an").value = birthDate.getFullYear();
     // todo: persist birthDate for later re-use
-    localStorage.setItem(dataNasterii.id, dataNasterii.value);
+    localStorage.setItem(this.id, this.value);
 }
+
 
 var dataDeclaratie = document.getElementById("data-declaratie");
 dataDeclaratie.onchange = function() {
@@ -67,6 +68,12 @@ editorNume.onchange = function() {
 var editorAdresa = document.getElementById("adresa");
 editorAdresa.onchange = editorNume.onchange;
 
+var editorAdresaResedinta = document.getElementById("adresa_resedinta");
+editorAdresaResedinta.onchange = editorNume.onchange;
+
+var loculNasterii = document.getElementById("locul_nasterii");
+loculNasterii.onchange = editorNume.onchange;
+
 
 
 // init from current date
@@ -75,6 +82,8 @@ dataDeclaratie.onchange(); // to copy values in the print view
 
 editorNume.value = localStorage.getItem(editorNume.id);
 editorAdresa.value = localStorage.getItem(editorAdresa.id);
+loculNasterii.value = localStorage.getItem(loculNasterii.id);
+editorAdresaResedinta.value = localStorage.getItem(editorAdresaResedinta.id);
 
 var imageUrl = localStorage.getItem(sigView.id);
 if (imageUrl == null) {

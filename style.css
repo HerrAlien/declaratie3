@@ -1,3 +1,7 @@
+:root {
+--font-size: 17px;
+}
+
 h1
 {
     text-align: center;
@@ -32,9 +36,11 @@ td
     background-position: center;
 }
 
-table, #div-locul-deplasarii, #nume, 
-#adresa, #locul-deplasarii, 
-#activitati-agricole,
+table, #adresa_resedinta, #nume, 
+#adresa, #adresa_companie, 
+#adresa_punct_lucru_1,
+#adresa_punct_lucru_2,
+#nume_companie,
 #date-identificare-adresa,
 #data-semnatura
 {
@@ -74,9 +80,20 @@ table
         font-size: 20px;
     }
 
-    h2, input, textarea
+    h2, input, textarea, #locul_nasterii__label
     {
-        font-size: 17px;
+        font-size: var(--font-size);
+    }
+
+    #locul_nasterii
+    {
+        max-width: 150px;
+    }
+
+    #locul_nasterii__label
+    {
+        display: inline-block;
+        font-weight: bold;
     }
 
     #date-identificare-adresa > tbody > tr > td:nth-child(1)
@@ -146,6 +163,16 @@ table
 
     }
 
+    @media screen and (max-width: 600px)
+    {
+        #locul_nasterii__label
+        {
+            left: 5;
+            position: absolute;
+            top: calc(13*var(--font-size));
+        }
+    }
+
     @media print
     {
         html, #footer
@@ -180,7 +207,7 @@ table
                 text-align: center;
             }
 
-            h2, input, textarea
+            h2, input, textarea, #locul_nasterii__label
             {
                 font-size: 6mm;
                 margin-bottom: 0;
@@ -191,9 +218,19 @@ table
                 transform: scale(1.5);
             }
 
-            #date-identificare-adresa > tbody > tr > td:nth-child(2)
+            #date-identificare-adresa > tbody > tr > td:nth-child(1)
             {
-                max-width: 140mm;
+                max-width:60mm;
+            }
+
+            #locul_nasterii
+            {
+                max-width:54mm;
+            }
+            #locul_nasterii__label 
+            {
+                display: inline;
+                font-weight:bold;
             }
 
             #date-identificare-adresa
